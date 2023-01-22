@@ -2,11 +2,12 @@ import React from "react";
 import "../App.css";
 import { useInView } from "react-intersection-observer";
 import Grid from "@mui/material/Grid";
-
+import { motion } from "framer-motion";
 import Grow from "@mui/material/Grow";
 import { games } from "../data/games";
 import { useTransition, animated } from "react-spring";
-
+import gamesImage from "../Assets/gamesImage.png";
+import { Zoom } from "@mui/material";
 function Game() {
   const [ref, inView] = useInView({ threshold: 0.2 });
   const transition = useTransition(games, {
@@ -21,11 +22,11 @@ function Game() {
         <div className="Slide" id="skills">
           <Grid
             container
-            direction="column"
-            justifyContent="flex-start"
+            direction="row"
+            justifyContent="space-between"
             alignItems="flex-start"
           >
-            <Grid>
+            <Grid item>
               <h1
                 style={{
                   color: "#808080",
@@ -37,108 +38,53 @@ function Game() {
                 Games:
               </h1>
             </Grid>
-            <Grid>
-              <h4
-                style={{
-                  paddingBottom: 100,
-                  paddingLeft: 50,
-                  color: "#808080",
-                  fontFamily: "Tajawal",
-                  fontSize: 20,
-                }}
-              >
-                play games and wine to earn jewelry and buy characters{" "}
-              </h4>
-            </Grid>
 
-            <Grid
-              container
-              spacing={4}
-              style={{
-                justifyContent: "center",
-                display: "flex",
-                paddingLeft: "10%",
-              }}
-            >
-              <Grid spacing={{ xs: 3, md: 10 }} container direction="row">
+            <Grid container>
+              <Grid
+                item
+                md={6}
+                xs={12}
+                container
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
                 {transition((style, item) =>
                   item ? (
                     <animated.div style={style}>
-                      <Grid
-                        container
-                        direction="row"
-                        justifyContent="center"
-                        alignItems="center"
-                        style={{ padding: 10 }}
-                      >
-                        <Grid item>
-                          <img
-                            src={item.uri}
-                            loading="lazy"
-                            style={{
-                              width: item.alt == "universe" ? "180px" : "160px",
-                              height: "160px",
-                              margin: 10,
-                            }}
-                            alt={item.alt}
-                          />
+                      <img
+                        src={item.uri}
+                        loading="lazy"
+                        style={{
+                          width: item.alt == "universe" ? "180px" : "160px",
+                          height: "160px",
+                          margin: 10,
+                        }}
+                        alt={item.alt}
+                      />
 
-                          <h3
-                            style={{
-                              fontFamily: "Roboto Condensed",
-                              color: "white",
-                            }}
-                          >
-                            {item.name}
-                          </h3>
-                        </Grid>
-
-                        {/* <Grid
-                        item
-                        direction="row"
-                        justifyContent="center"
-                        alignItems="center"
+                      <h3
+                        style={{
+                          fontFamily: "Roboto Condensed",
+                          color: "white",
+                        }}
                       >
-                        <div style={{ width: 50, height: 50, padding: 5 }}>
-                          <CircularProgressbarWithChildren
-                            value={item.brainValue}
-                          >
-                            <img
-                              style={{ width: 20 }}
-                              src={item.brain}
-                              alt="brain"
-                            />
-                          </CircularProgressbarWithChildren>
-                        </div>
-                        <div style={{ width: 50, height: 50, padding: 5 }}>
-                          <CircularProgressbarWithChildren
-                            value={item.powerValue}
-                          >
-                            <img
-                              style={{ width: 20 }}
-                              src={item.power}
-                              alt="power"
-                            />
-                          </CircularProgressbarWithChildren>
-                        </div>
-                        <div style={{ width: 50, height: 50, padding: 5 }}>
-                          <CircularProgressbarWithChildren
-                            value={item.hartValue}
-                          >
-                            <img
-                              style={{ width: 20 }}
-                              src={item.hart}
-                              alt="hart"
-                            />
-                          </CircularProgressbarWithChildren>
-                        </div>
-                      </Grid> */}
-                      </Grid>
+                        {item.name}
+                      </h3>
                     </animated.div>
                   ) : (
                     ""
                   )
                 )}
+              </Grid>
+              <Grid item md={6} xs={6} className="gamesScreensContinuer">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 5 }}
+                >
+                  <img src={gamesImage} width={800} />
+                </motion.div>
               </Grid>
             </Grid>
           </Grid>

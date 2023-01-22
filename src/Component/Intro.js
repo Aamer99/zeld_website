@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Grow, Zoom } from "@mui/material";
 import zeldaLogo from "../Assets/logo.png";
-import zeldaScrenns from "../Assets/zeldaScreens.png";
+import zeldaScreens from "../Assets/zeldaScreens.png";
 import { useSpring, animated } from "@react-spring/web";
 import "../App.css";
 function Intro() {
@@ -58,7 +58,11 @@ function Intro() {
           }}
           className="zeldaScreensContinuer"
         >
-          <img src={zeldaScrenns} alt="AAA" />
+          <img
+            src={zeldaScreens}
+            alt="zeldaScreens"
+            style={{ width: "auto", maxWidth: "800px" }}
+          />
         </Zoom>
       </Grid>
     </Grid>
