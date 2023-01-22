@@ -4,6 +4,7 @@ import Game from "./Component/gameSection";
 
 import Characters from "./Component/Characters";
 import LiveDemo from "./Component/liveDemo";
+import OurTeam from "./Component/ourTeam";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Game />
       <Characters />
       <LiveDemo />
+      <OurTeam />
     </div>
   );
 }
