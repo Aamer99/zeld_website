@@ -2,12 +2,13 @@ import React from "react";
 import "../App.css";
 import { useInView } from "react-intersection-observer";
 import Grid from "@mui/material/Grid";
-
+import charactersImage from "../Assets/charactersScreen.png";
 import Grow from "@mui/material/Grow";
 import { characters } from "../data/charter";
 import { useTransition, animated } from "react-spring";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { motion } from "framer-motion";
 
 export default function Characters() {
   const [ref, inView] = useInView({ threshold: 0.2 });
@@ -23,11 +24,11 @@ export default function Characters() {
         <div className="Slide" id="skills">
           <Grid
             container
-            direction="column"
+            direction="row"
             justifyContent="flex-start"
             alignItems="flex-start"
           >
-            <Grid>
+            <Grid item>
               <h1
                 style={{
                   color: "#808080",
@@ -54,17 +55,21 @@ export default function Characters() {
                 play games and wine to earn jewelry and buy characters{" "}
               </h4>
             </Grid> */}
-
-            <Grid
-              container
-              spacing={4}
-              style={{
-                justifyContent: "center",
-                display: "flex",
-                paddingLeft: "15%",
-              }}
-            >
-              <Grid spacing={{ xs: 3, md: 10 }} container direction="row">
+            <Grid container>
+              <Grid
+                item
+                container
+                md={6}
+                xs={12}
+                // style={{
+                //   justifyContent: "center",
+                //   display: "flex",
+                //   paddingLeft: "15%",
+                // }}
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
                 {transition((style, item) =>
                   item ? (
                     <animated.div style={style}>
@@ -143,6 +148,15 @@ export default function Characters() {
                     ""
                   )
                 )}
+              </Grid>
+              <Grid item md={6} xs={6} className="gamesScreensContinuer">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 5 }}
+                >
+                  <img src={charactersImage} width={700} />
+                </motion.div>
               </Grid>
             </Grid>
           </Grid>
