@@ -20,7 +20,7 @@ function Intro() {
     >
       <Grid
         item
-        justifyContent="center"
+        // justifyContent="center"
         alignItems="center"
         xs={12}
         className="zeldaLogoContainer"

@@ -47,6 +47,7 @@ export default function Characters() {
                   color: "#808080",
                   fontFamily: "Tajawal",
                   fontSize: 20,
+                  paddingRight: 50,
                 }}
               >
                 play games and wine to earn jewelry and buy characters{" "}
@@ -59,7 +60,7 @@ export default function Characters() {
               style={{
                 justifyContent: "center",
                 display: "flex",
-                paddingLeft: "10%",
+                paddingLeft: "15%",
               }}
             >
               <Grid spacing={{ xs: 3, md: 10 }} container direction="row">
