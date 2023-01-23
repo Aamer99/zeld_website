@@ -16,9 +16,7 @@ function Intro() {
       direction="column"
       justifyContent="space-between"
       alignItems="flex-start"
-      style={{
-        height: "100vh",
-      }}
+      className="intoCounter"
     >
       <Grid
         item

@@ -19,6 +19,9 @@
 .zeldaLogoContainer{
   display: flex;
 }
+.intoCounter{
+  height: 100vh;
+}
 
 .Slide {
   min-height: 50vh;
@@ -49,5 +52,11 @@
   }
   .gamesScreensContinuer{
     display: none;
+  }
+  .IconContainersHeaderSection{
+    display: none;
+  }
+  .intoCounter{
+    height: 50vh;
   }
 }

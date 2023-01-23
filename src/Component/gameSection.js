@@ -32,7 +32,7 @@ function Game() {
                   color: "#808080",
                   fontFamily: "Alkalami",
                   fontSize: 40,
-                  paddingLeft: 10,
+                  paddingLeft: "20px",
                 }}
               >
                 Games:
