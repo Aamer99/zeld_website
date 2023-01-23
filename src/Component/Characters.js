@@ -34,12 +34,13 @@ export default function Characters() {
                   fontFamily: "Alkalami",
                   fontSize: 40,
                   paddingLeft: "20px",
+                  paddingBottom: 100,
                 }}
               >
                 Characters:
               </h1>
             </Grid>
-            <Grid>
+            {/* <Grid>
               <h4
                 style={{
                   paddingBottom: 100,
@@ -52,7 +53,7 @@ export default function Characters() {
               >
                 play games and wine to earn jewelry and buy characters{" "}
               </h4>
-            </Grid>
+            </Grid> */}
 
             <Grid
               container
