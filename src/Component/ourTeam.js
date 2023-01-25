@@ -46,6 +46,7 @@ function OurTeam() {
               direction="row"
               justifyContent="flex-start"
               alignItems="flex-start"
+              style={{ padding: "5px" }}
             >
               {transition((style, item) =>
                 item ? (
@@ -64,15 +65,15 @@ function OurTeam() {
                           style={{ borderRadius: "50%" }}
                         />
                       </Grid>
-                      <Grid
-                        item
-                        style={{ padding: "10px" }}
-                        // direction="column"
-                        // justifyContent="flex-start"
-                        // alignItems="flex-start"
-                      >
-                        <h3 style={{ color: "white" }}>{item.name}</h3>
-                        <h5 style={{ color: "white" }}>{item.description}</h5>
+                      <Grid item style={{ padding: "10px" }}>
+                        <h3 style={{ color: "white", fontFamily: "Anton" }}>
+                          {item.name}
+                        </h3>
+                        <h5
+                          style={{ color: "white", fontFamily: "EB Garamond" }}
+                        >
+                          {item.description}
+                        </h5>
                         <Grid
                           container
                           direction="row"
@@ -80,28 +81,28 @@ function OurTeam() {
                           alignItems="center"
                         >
                           <IconButton
-                            style={{ color: "white" }}
+                            // style={{ color: "white" }}
+
                             onClick={() => {
                               window.open(`${item.githubURL}`, "'_blank'");
                             }}
                           >
-                            <GitHubIcon />
+                            <GitHubIcon className="GithubIcon" />
                           </IconButton>
                           <IconButton
-                            style={{ color: "white" }}
+                            className="LinkedInIcon"
                             onClick={() => {
                               window.open(`${item.linkedInURL}`, "_blank");
                             }}
                           >
-                            <LinkedInIcon />
+                            <LinkedInIcon className="LinkedInIcon" />
                           </IconButton>
                           <IconButton
-                            style={{ color: "white" }}
                             onClick={() => {
                               window.open(`mailto:${item.email}`);
                             }}
                           >
-                            <Email />
+                            <Email style={{ color: "white" }} />
                           </IconButton>
                         </Grid>
                       </Grid>

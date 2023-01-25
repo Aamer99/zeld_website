@@ -32,6 +32,18 @@
   align-items: center;
   justify-content: center;
 }
+.GithubIcon{
+  color: white;
+}
+.LinkedInIcon{
+  color: white;
+}
+.GithubIcon:hover {
+  color: black;
+}
+.LinkedInIcon:hover {
+  color: #0a66c2;
+}
 
 @media only screen and (max-width: 900px) {
   .zeldaScreensContinuer{

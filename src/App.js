@@ -16,6 +16,10 @@ function App() {
       <Characters />
       <LiveDemo />
       <OurTeam />
+
+      <div style={{ padding: 5 }}>
+        <h5 style={{ color: "white" }}>©Zelda</h5>
+      </div>
     </div>
   );
 }
