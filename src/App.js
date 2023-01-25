@@ -15,7 +15,7 @@ function App() {
       <Game />
       <Characters />
       <LiveDemo />
-      {/* <OurTeam /> */}
+      <OurTeam />
     </div>
   );
 }
